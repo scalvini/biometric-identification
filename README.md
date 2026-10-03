@@ -1,6 +1,6 @@
 # Biometric Identification
 
-> **Version:** 1.0
+> **Version:** 1.1
 > **Last updated:** 3 October 2026
 
 This repository holds the corpus archive and the textual analysis for a study of biometric identification as a condition of assistance, by Dr Marco Scalvini (University of the Arts London). The study is a critical discourse analysis, in which UNHCR's identity-management guidance is read as the node, and Bangladesh as the place where that guidance is articulated most fully. Four disputes from 2023 to 2026, in Gaza, Malaysia, South Africa and Mizoram (India), are read as its recontextualisations. The textual analysis was carried out on the 21 saved core texts, at the first of the three dimensions in Norman Fairclough's framework.
@@ -9,7 +9,7 @@ The article is in preparation, and the textual analysis is a provisional first p
 
 ## The page
 
-`index.html` is a single self-contained page that opens in any browser. Its tabs form two groups.
+`index.html` is a single self-contained page that opens in any browser, and GitHub Pages publishes it at https://scalvini.eu/biometric-identification/. Its tabs form two groups.
 
 | Group | Tabs |
 |---|---|
@@ -32,7 +32,8 @@ A record in the corpus opens its textual analysis, and each analysed document op
 | `prompts/` | The prompts given to the search agents, and the queries of the case search |
 | `docs/` | The documentation listed below |
 | `build.sh` | Rebuilds the data and the page |
-| `robots.txt` | Asks crawlers not to index a website built from this repository |
+| `robots.txt` | Asks crawlers not to index the files where the repository is served at the root of a domain |
+| `.nojekyll` | Tells GitHub Pages to publish the files as they are |
 
 ## The corpus
 
@@ -88,7 +89,7 @@ The corpus was collected and the page was built in working sessions with Claude,
 
 ## Copyright and indexing
 
-The excerpts are short quotations for criticism and review, and copyright in them remains with their authors and publishers. The code and the documentation are © 2026 Marco Scalvini, and no licence is granted at present. The `robots.txt` file and the `noindex` tag in `index.html` ask search engines not to index a website built from this repository. They do not govern the repository pages on github.com, which GitHub serves under its own rules.
+The excerpts are short quotations for criticism and review, and copyright in them remains with their authors and publishers. The code and the documentation are © 2026 Marco Scalvini, and no licence is granted at present. The `noindex` tag in `index.html` asks search engines not to index the published page. The `robots.txt` file has effect only where the repository is served at the root of a domain, which is not the case at scalvini.eu. Neither file governs the repository pages on github.com, which GitHub serves under its own rules.
 
 ## Citation
 
