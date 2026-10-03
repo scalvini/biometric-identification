@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Single light theme on white, as Marco asked. Layout: a registry ledger. Masthead with the case distribution, tabs, then one working view at a time; a detail drawer opens from the right. */
+/* Single light theme on white. Layout: a registry ledger. Masthead with the case distribution, tabs, then one working view at a time; a detail drawer opens from the right. */
 :root {
   --bg: #FFFFFF;
   --panel: #FFFFFF;
@@ -292,33 +292,33 @@ const POS = {
 };
 const POS_ORDER = ["standard", "articulation", "response", "sets", "runs", "answers", "contests", "voice"];
 const PLACEHOLDERS = [
-  { ck: "gaza", pos: "sets", title: "GHF, “Announcing New Pilot For Families to Reserve Aid Parcels”", date: "18 Aug 2025", cls: "OC", status: "To be saved by Marco: ghf.org no longer resolves; a Wayback capture of 16 Dec 2025 exists" },
+  { ck: "gaza", pos: "sets", title: "GHF, “Announcing New Pilot For Families to Reserve Aid Parcels”", date: "18 Aug 2025", cls: "OC", status: "To be saved by the author from a Wayback capture of 16 Dec 2025, because ghf.org no longer resolves" },
   { ck: "mz", pos: "sets", title: "Ministry of Home Affairs (Delhi), directive on biometrics of Myanmar nationals", date: "2023", cls: "PA", status: "Not yet found" },
   { ck: "mz", pos: "runs", title: "Government of Mizoram, statement on the enrolment", date: "2025", cls: "OC", status: "Not yet found" },
   { ck: "mz", pos: "answers", title: "Lok Sabha or Rajya Sabha answer on the enrolment", date: "2023 to 2026", cls: "PA", status: "Not yet found" }
 ];
 const DATE_FIX = { "06_MC_2025-06-01_Diplomat_002": "2025-06-12" };
 const NOT_SAVED = [
-  { what: "GHF, “Announcing New Pilot For Families to Reserve Aid Parcels” (18 Aug 2025)", why: "ghf.org no longer resolves. A Wayback capture of 16 Dec 2025 exists; Marco can save it from his own browser." },
-  { what: "235sa, “SASSA: Government’s Foot in the Door”", why: "The site refuses automated access; Marco can save it from his own browser." },
-  { what: "NST, “UNHCR says refugee processing follows standards, welcomes closer ties with Putrajaya” (Jul 2026)", why: "The site refuses automated access; Marco can save it from his own browser." },
+  { what: "GHF, “Announcing New Pilot For Families to Reserve Aid Parcels” (18 Aug 2025)", why: "ghf.org no longer resolves. A Wayback capture of 16 Dec 2025 exists, which the author can save by hand from a browser." },
+  { what: "235sa, “SASSA: Government’s Foot in the Door”", why: "The site refuses automated access, so the author can save it only by hand from a browser." },
+  { what: "NST, “UNHCR says refugee processing follows standards, welcomes closer ties with Putrajaya” (Jul 2026)", why: "The site refuses automated access, so the author can save it only by hand from a browser." },
   { what: "Wayback copy (12 Jun 2026) of the UNHCR Malaysia DPP notice", why: "Captured after the page's last update, so it cannot show the January wording." }
 ];
 const AGENTS = [
   { g: "UNHCR global texts for the node", n: 1, when: "3 Oct, 11:47 to 12:08", work: "28 searches, 133 page reads", used: "Led to section 5.2 of the Guidance, which the main session read and saved" },
   { g: "Gap searches: Gaza, Malaysia, South Africa", n: 3, when: "3 Oct, 13:29 to 13:52", work: "206 searches, 356 page reads", used: "37 of the second batch came from their ranked lists" },
   { g: "Second sources for the Bangladesh case", n: 1, when: "2 Oct, 11:06 to 11:12", work: "10 searches, 21 page reads", used: "No document saved; notes on the record" },
-  { g: "Ethiopia, Rwanda, Yemen and India (two rounds)", n: 8, when: "3 Oct, 11:38 to 12:09", work: "Stopped by Marco before reporting", used: "Nothing" },
+  { g: "Ethiopia, Rwanda, Yemen and India (two rounds)", n: 8, when: "3 Oct, 11:38 to 12:09", work: "Stopped by the author before reporting", used: "Nothing" },
   { g: "Checks on the article's sources and facts, one draft review", n: 20, when: "2 Oct, 08:50 to 11:48", work: "Literature and fact checks", used: "Not corpus work" }
 ];
 const STEPS = [
-  { when: "11:35 to 13:05", what: "Marco sets the design: UNHCR's identity-management discourse as the node, and four recent disputes as cases." },
+  { when: "11:35 to 13:05", what: "The author sets the design: UNHCR's identity-management discourse as the node, and four recent disputes as cases." },
   { when: "11:47 to 12:08", what: "One agent reads UNHCR's global texts on registration and identity management." },
-  { when: "12:10 to 12:31", what: "The main session searches for disputes from 2021 to 2026 (32 searches, 25 page reads). Marco chooses Gaza, Malaysia, South Africa and Mizoram." },
-  { when: "12:20 to 12:43", what: "First batch: 39 documents saved into CASE09 to CASE12 after Marco's approval." },
+  { when: "12:10 to 12:31", what: "The main session searches for disputes from 2021 to 2026 (32 searches, 25 page reads). The author chooses Gaza, Malaysia, South Africa and Mizoram." },
+  { when: "12:20 to 12:43", what: "First batch: 39 documents saved into CASE09 to CASE12 after the author's approval." },
   { when: "13:29 to 13:52", what: "Three agents search the gaps: actors' own texts for Gaza, UNHCR's words for Malaysia, refusal in South Africa." },
   { when: "about 14:10", what: "Section 5.2 of the UNHCR Guidance is read on the live page and its wording checked." },
-  { when: "14:20 to 14:38", what: "Second batch: 39 documents saved into NODE and CASE09 to CASE11 after Marco's approval of 42 proposed items." },
+  { when: "14:20 to 14:38", what: "Second batch: 39 documents saved into NODE and CASE09 to CASE11 after the author's approval of 42 proposed items." },
   { when: "14:40 to 14:55", what: "Every file hashed and its content checked; 22 quotations verified in the saved copies; archive log 1.4 and working log 3.32 written." }
 ];
 
@@ -544,7 +544,7 @@ function renderProvenance() {
     ["Borderline", "2 files", "The UNHCR Malaysia privacy notice and Israel's letter to the Security Council."],
     ["Month-only dates", "2 files", "Written as xx in the doc_id; the April rule uses the first day for a year-only date."],
     ["Undated pages", "2 files", "The doc_id carries the retrieval date."],
-    ["Wayback copies", "2 files", "DVB (live site down) and the Bangladesh notice (page removed); afternoon practice left such copies to Marco."]
+    ["Wayback copies", "2 files", "DVB (live site down) and the Bangladesh notice (page removed); afternoon practice left such copies to the author."]
   ];
   $("#convtbl").innerHTML = '<thead><tr><th>Issue</th><th>Extent</th><th>Note</th></tr></thead><tbody>' + conv.map((r) => "<tr><td>" + r[0] + '</td><td class="mono">' + r[1] + "</td><td>" + r[2] + "</td></tr>").join("") + "</tbody>";
 }

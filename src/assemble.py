@@ -26,7 +26,7 @@ c_css = between(C, '<style>', '</style>')
 t_css = between(T, '<style>', '</style>')
 
 # design note
-c_css = re.sub(r'^\s*/\*.*?\*/', '\n/* Single light theme on white, as Marco asked.\n   Layout: one archive in two parts. A masthead with the case distribution, then tabs in two labelled groups,\n   the corpus (ledger, timeline, tables, corpus construction) and the textual analysis (annotated texts, matrix,\n   readings across cases, term counts, method). The record drawer opens from the right on any tab. */', c_css, count=1, flags=re.S)
+c_css = re.sub(r'^\s*/\*.*?\*/', '\n/* Single light theme on white.\n   Layout: one archive in two parts. A masthead with the case distribution, then tabs in two labelled groups,\n   the corpus (ledger, timeline, tables, corpus construction) and the textual analysis (annotated texts, matrix,\n   readings across cases, term counts, method). The record drawer opens from the right on any tab. */', c_css, count=1, flags=re.S)
 
 # tokens of the analysis that the corpus page lacks
 root_t = between(t_css, ':root {', '}')
