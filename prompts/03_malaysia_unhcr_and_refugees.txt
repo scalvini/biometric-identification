@@ -1,0 +1,19 @@
+You are helping an academic (critical discourse analysis) who studies disputes over biometric registration of refugees, 2021 to 2026. One case is MALAYSIA, 2025 to 2026: the Ministry of Home Affairs (KDN) launched its own biometric refugee registration, the Dokumen Pendaftaran Pelarian (DPP), from 1 January 2026, run with the Immigration Department and developed by MIMOS, under National Security Council Directive No. 23. In July 2026 the government ordered UNHCR to pause the registration of new refugees, and deportations to Myanmar followed in September and October 2026.
+
+The corpus already holds the KDN media statement of 18 May 2026, ministers' statements reported by Bernama, FMT, Malay Mail and Suara Keadilan, HRW (4 May 2026), Fortify Rights (1 June 2026), DVB (13 December 2025) and Al Jazeera (2 October 2026). WHAT IS MISSING:
+(1) UNHCR's own words on the DPP and on the order to pause registration. A UNHCR Malaysia help page titled "Important Update on Dokumen Pendaftaran Pelarian (DPP) Programme" (https://help.unhcr.org/malaysia/important_update_on_dokumen_pendaftaran_pelarian_dpp_programme/, also reached via refugeemalaysia.org) now returns "Page not found" and has no capture in the Wayback Machine.
+(2) Refugees' own statements about registering with the DPP, especially any refusal, boycott or reluctance, and their reasons, from refugee community organisations (for example the Alliance of Chin Refugees, Rohingya Society in Malaysia, MERHROM, Myanmar Ethnic Rohingya Human Rights Organisation Malaysia) or from interviews.
+
+TASK: find and READ:
+- copies or quotations of the removed UNHCR page: try archive.today (archive.ph, archive.is), other Wayback URLs (with or without trailing slash, refugeemalaysia.org address), search-engine snippets, and NGO or community posts that quote it;
+- other UNHCR texts: UNHCR Malaysia announcements (https://help.unhcr.org/malaysia/announcements/), UNHCR news pages for Malaysia, UNHCR Asia-Pacific briefing notes, and UNHCR spokespeople or the Representative quoted in Malaysian or international media (The Star, New Straits Times, Malaysiakini, CNA, Reuters, Bernama) on the DPP, data sharing, or the pause in registration;
+- refugees' and community organisations' statements on registering, refusing or fearing the DPP.
+
+Rules:
+- Use WebSearch and WebFetch only. Read-only: do not download or save files, do not use curl, do not write files. If a site is declined, do not work around it; report it as a lead.
+- WebFetch passes pages through a summarising model, so ask it for verbatim sentences and mark every excerpt "verbatim as returned by the tool, to verify".
+- Report only texts you actually opened. A page you could not open is a lead.
+- For each text give: author or organisation; title; date; URL; type; language; whether a capture exists in the Internet Archive (query https://archive.org/wayback/available?url=THE_URL with WebFetch); and up to four excerpts of at most 40 words each (Malay with an English translation in brackets).
+- Accuracy matters more than coverage. Flag every uncertainty.
+
+Final answer (at most 1,200 words): 1. Texts found (table). 2. Excerpts grouped by UNHCR, government, refugees and NGOs. 3. Whether the removed UNHCR page can be recovered, and what it said if quoted elsewhere. 4. Leads not opened. 5. A ranked list of the texts most worth saving.

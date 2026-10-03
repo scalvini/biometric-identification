@@ -1,0 +1,20 @@
+You are helping an academic (critical discourse analysis, communication ethics) who studies disputes over biometric identification as a condition of assistance, 2021 to 2026. One case is SOUTH AFRICA: the South African Social Security Agency (SASSA) introduced facial verification for the Social Relief of Distress (SRD) grant (from about 2024) and made biometric enrolment (fingerprints or facial recognition through "eKYC") mandatory for all grant applications and reviews from 1 September 2025. About 68,000 grants were suspended by May 2026, with thousands of complaints about the facial system.
+
+The corpus already holds SAnews (25 August 2025), GroundUp (27 August 2025), Cape Argus on Black Sash (2 September 2025), IOL (24 May 2026), Daily Voice (25 May 2026), Daily Maverick (24 August 2026), Bizcommunity (31 July 2024) and a Black Sash and UBI Coalition statement (24 June 2024). Those documents record exclusion and contestation by civil society. WHAT IS MISSING is any record of REFUSAL: people who declined, objected to or would not consent to biometric or facial verification (for privacy, religious, data-protection or other reasons), as opposed to people who failed to verify.
+
+TASK: find and READ public documents showing:
+(a) individuals or groups refusing or objecting to SASSA biometric or facial verification, in their own words where possible;
+(b) complaints to the Information Regulator about SASSA's processing of biometric data under POPIA, and any statement, assessment or enforcement notice of the Information Regulator on SASSA biometrics or facial recognition;
+(c) litigation touching the biometric or digital verification conditions (for example Black Sash, the Institute for Economic Justice, #PayTheGrants or others on the SRD regulations, 2023 to 2026), with the court's or the department's words;
+(d) parliamentary questions and SASSA or Department of Social Development answers about people who decline or cannot do biometric or facial verification, and any opt-out, exemption or "alternative arrangement";
+(e) SASSA's or the Department's own statements responding to objections (consent, privacy, alternatives, consequences of not enrolling).
+
+Rules:
+- Use WebSearch and WebFetch only. Read-only: do not download or save files, do not use curl, do not write files. If a site is declined, do not work around it; report it as a lead.
+- WebFetch passes pages through a summarising model, so ask it for verbatim sentences and mark every excerpt "verbatim as returned by the tool, to verify".
+- Report only texts you actually opened. A page you could not open is a lead.
+- Distinguish clearly REFUSAL (declining, objecting, withholding consent) from EXCLUSION (failure to verify, technical problems).
+- For each text give: author or organisation; title; date; URL; type; whether a capture exists in the Internet Archive (query https://archive.org/wayback/available?url=THE_URL with WebFetch); and up to four excerpts of at most 40 words each.
+- Accuracy matters more than coverage. Flag every uncertainty.
+
+Final answer (at most 1,200 words): 1. Texts found (table). 2. Excerpts grouped under (a) to (e). 3. Your plain judgement: is there a documented refusal (not only exclusion) in this case, and by whom? 4. Leads not opened. 5. A ranked list of the texts most worth saving.

@@ -1,0 +1,24 @@
+You are helping an academic (critical discourse analysis after Norman Fairclough, communication ethics) with an article on disputes over biometric registration as a condition of humanitarian assistance, 2017 to 2026.
+
+The argument: a "nodal discourse" of identity management, in Fairclough's sense of a discourse which "subsume[s] and articulate[s] in a particular way a great many other discourses" (Fairclough 2010, Critical Discourse Analysis, 2nd edn, p. 507), is formed in UNHCR's texts on registration and identity management (the PRIMES system was launched in 2017) and is articulated most fully in Bangladesh. There, UNHCR and the Government of Bangladesh write that "establishing and preserving identities is key to ensuring protection" (2023 notice) and that registration is "a pre-requisite" for protection and assistance, so that "refusing the processing of personal data may lead to deregistration" (2026 questions and answers). The article then traces how this nodal discourse is recontextualised in other disputes.
+
+YOUR TASK: identify the node at the global scale. Find and READ UNHCR's own global texts (and closely related inter-agency texts) that state why registration and biometric identity management are needed, what they are for, and what follows for people who do not register or who refuse. Candidates (verify each; do not assume):
+- UNHCR, Guidance on Registration and Identity Management (online, from about 2018), especially its chapters on the purpose of registration, biometrics, data protection, consent and refusal.
+- UNHCR descriptions of PRIMES (Population Registration and Identity Management EcoSystem) and BIMS, including news items and the 2017 to 2019 rollout.
+- UNHCR Strategy on Digital Identity and Inclusion (around 2018) and the Digital Transformation Strategy 2022 to 2026.
+- UNHCR Policy on the Protection of Personal Data of Persons of Concern (2015) and the General Policy on Personal Data Protection and Privacy (2022), on consent and on what happens if a person does not consent.
+- UNHCR Executive Committee Conclusion No. 91 (2001) on registration.
+- The Global Compact on Refugees (2018), paragraphs on registration and documentation.
+- The UNHCR and WFP joint principles or data-sharing agreements on biometrics and targeting (around 2017 to 2018), and WFP's statements on SCOPE.
+- The World Bank ID4D "Principles on Identification for Sustainable Development" (2017), if UNHCR texts cite them.
+
+For each text, find the passages where it (1) names the purposes of registration and identity management (protection, assistance, solutions, integrity, accuracy, fraud, duplication, efficiency, accountability to donors, security, inclusion); (2) presents registration or biometrics as necessary, required or a condition of assistance; (3) addresses consent, objection or refusal to registration or to biometric capture, and what follows from it; (4) cites other texts or "global standards".
+
+Rules:
+- Use WebSearch and WebFetch only. Read-only: do not download or save files, do not use curl, do not write files. If a site is declined, do not work around it; report it as a lead.
+- Report only texts you actually opened and read. A page you could not open is a lead.
+- Excerpts must be copied word for word from the page, inside quotation marks, at most 40 words each, with the section or paragraph number where there is one. Never paraphrase inside quotation marks and never reconstruct wording from memory.
+- For each text give: title; organisation; date; URL; type; approximate length; whether a capture exists in the Internet Archive (query https://archive.org/wayback/available?url=THE_URL with WebFetch).
+- Accuracy matters more than coverage. Flag every uncertainty.
+
+Final answer (about 1,000 to 1,500 words): 1. The texts read (table). 2. Excerpts grouped by the four points above. 3. The vocabulary of the node, in the texts' own words (the terms that recur across texts). 4. What these texts say, or leave unsaid, about refusal. 5. Leads not opened.

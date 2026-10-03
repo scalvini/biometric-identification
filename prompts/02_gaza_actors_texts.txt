@@ -1,0 +1,19 @@
+You are helping an academic (critical discourse analysis) who studies disputes over biometric identification as a condition of humanitarian assistance, 2021 to 2026. One case is GAZA, May to September 2025: the US- and Israel-backed Gaza Humanitarian Foundation (GHF) distribution sites, and Israeli plans to screen aid recipients, including by facial recognition, which UN agencies refused to join.
+
+The corpus already holds press reports (Reuters 28 May 2025, CNN 30 May 2025, NBC 28 May 2025, PassBlue 12 May 2025, ID Tech 12 and 28 May 2025), the UN Humanitarian Country Team statement of 28 May 2025, and two Skyline International reports. WHAT IS MISSING are texts written by the actors who set or defended the condition.
+
+TASK: find and READ primary texts, in which the condition of identification, screening, vetting or facial recognition of aid recipients is stated, defended, qualified or denied, by:
+- the Gaza Humanitarian Foundation: its website (for example ghf.org), press releases (also on PR Newswire or Business Wire), statements on X, FAQs, letters to OCHA or UN agencies, and its operating plan or proposal documents, including any leaked plan describing "hubs", vetting, "humanitarian bubbles" or the contractor Global Delivery Company;
+- the Israeli government: COGAT (gov.il, X), the Prime Minister's Office, the Ministry of Defense, the IDF spokesperson, ministers, and Israeli statements at the UN;
+- the US government: State Department briefings or statements on GHF, the US Ambassador to Israel, and envoys;
+- UN agencies' own official texts that mention biometrics, facial recognition or screening, as opposed to press paraphrase: for example the transcript of the UN Geneva press briefing where UNICEF's James Elder spoke (around 9 May 2025), and OCHA, UNRWA or WFP statements or flash updates.
+
+Rules:
+- Use WebSearch and WebFetch only. Read-only: do not download or save files, do not use curl, do not write files. If a site is declined, do not work around it; report it as a lead.
+- WebFetch passes pages through a summarising model, so ask it for verbatim sentences and mark every excerpt "verbatim as returned by the tool, to verify".
+- Report only texts you actually opened. A page you could not open is a lead.
+- For each text give: author or organisation; title; date; URL; type (official statement, press release, plan or proposal, briefing transcript, social media post); whether a capture exists in the Internet Archive (query https://archive.org/wayback/available?url=THE_URL with WebFetch); and up to four excerpts of at most 40 words each on identification, screening, vetting, facial recognition, biometrics, data or eligibility of recipients.
+- Say plainly if the actors' own texts never mention facial recognition, and whether any of them denies using it.
+- Accuracy matters more than coverage. Flag every uncertainty.
+
+Final answer (at most 1,200 words): 1. Texts found, as a table with the fields above. 2. Excerpts grouped by actor. 3. What the actors' own texts say or leave unsaid about screening and facial recognition. 4. Leads not opened. 5. A ranked list of the texts most worth saving to the corpus.

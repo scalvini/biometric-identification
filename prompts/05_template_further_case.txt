@@ -1,0 +1,22 @@
+You are helping an academic (critical discourse analysis) who studies disputes over biometric
+identification as a condition of assistance, 2021 to 2026. One case is [CASE]: [two or three
+sentences of context, with dates and the institutions involved].
+
+The corpus already holds [list of documents with dates]. WHAT IS MISSING is [the gap].
+
+TASK: find and READ [the kinds of primary text, and the actors who wrote them].
+
+Rules:
+- Use WebSearch and WebFetch only. Read-only: do not download or save files, do not use curl,
+  do not write files. If a site is declined, do not work around it; report it as a lead.
+- WebFetch passes pages through a summarising model, so ask it for verbatim sentences and mark
+  every excerpt "verbatim as returned by the tool, to verify".
+- Report only texts you actually opened. A page you could not open is a lead.
+- For each text give: author or organisation; title; date; URL; type; language; whether a capture
+  exists in the Internet Archive (query https://archive.org/wayback/available?url=THE_URL with
+  WebFetch); and up to four excerpts of at most 40 words each.
+- Accuracy matters more than coverage. Flag every uncertainty.
+
+Final answer (at most 1,200 words): 1. Texts found (table). 2. Excerpts grouped by actor.
+3. [The question this case must answer]. 4. Leads not opened. 5. A ranked list of the texts
+most worth saving.

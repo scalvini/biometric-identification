@@ -1,0 +1,567 @@
+<title>Biometric Condition Corpus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Single light theme on white, as Marco asked. Layout: a registry ledger. Masthead with the case distribution, tabs, then one working view at a time; a detail drawer opens from the right. */
+:root {
+  --bg: #FFFFFF;
+  --panel: #FFFFFF;
+  --tint: #F4F6F5;
+  --ink: #101413;
+  --ink-2: #2E3633;
+  --ink-3: #4F5955;
+  --rule: #CBD2CE;
+  --rule-2: #E3E7E5;
+  --accent: #174E70;
+  --accent-soft: #E6EFF5;
+  --focus: #B86E00;
+  --c-node: #6B5532;
+  --c-bd: #5F6B1F;
+  --c-gaza: #A33A31;
+  --c-my: #1F6B57;
+  --c-za: #8E6608;
+  --c-mz: #4F428A;
+  --ok: #1E6B3E;
+  --warn: #8F5600;
+  --scrim: rgba(16, 20, 19, 0.30);
+  --shadow: 0 1px 2px rgba(16, 20, 19, 0.06), 0 12px 32px rgba(16, 20, 19, 0.12);
+  --f-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-sans); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 72px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.eyebrow { font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); }
+
+/* masthead */
+.masthead { display: grid; gap: 14px; padding-bottom: 22px; border-bottom: 1px solid var(--rule); }
+h1 { margin: 0; font-size: clamp(30px, 4.6vw, 48px); line-height: 1.02; font-weight: 760; font-stretch: 82%; letter-spacing: -0.01em; text-wrap: balance; }
+.lede { margin: 0; max-width: 68ch; color: var(--ink-2); font-size: 18px; line-height: 1.5; }
+.casebar { display: flex; height: 14px; border-radius: 3px; overflow: hidden; background: var(--rule-2); }
+.casebar span { display: block; height: 100%; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 15px; color: var(--ink-2); }
+.legend b { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 4px 0 0; }
+.stats div { display: grid; }
+.stats dt { font-size: 12.5px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--f-mono); }
+.stats dd { margin: 0; font-size: 26px; font-weight: 700; font-stretch: 85%; font-variant-numeric: tabular-nums; }
+
+/* tabs */
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; margin: 20px 0 18px; border-bottom: 1px solid var(--rule); }
+.tabs button { appearance: none; border: 0; background: none; color: var(--ink-2); font: 600 16px/1 var(--f-sans); padding: 13px 14px 12px; border-bottom: 2px solid transparent; cursor: pointer; }
+.tabs button[aria-selected="true"] { color: var(--accent); border-bottom: 3px solid var(--accent); }
+.tabs button:hover { color: var(--ink); }
+
+/* filters */
+.filters { display: grid; gap: 12px; padding: 16px; background: var(--tint); border: 1px solid var(--rule-2); border-radius: 6px; margin-bottom: 14px; }
+.frow { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.flabel { font-family: var(--f-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); min-width: 52px; }
+input[type="search"], select { font: 15px var(--f-sans); color: var(--ink); background: var(--panel); border: 1px solid var(--rule); border-radius: 5px; padding: 8px 10px; }
+input[type="search"] { flex: 1 1 260px; min-width: 0; }
+.chip { appearance: none; display: inline-flex; align-items: center; gap: 6px; font: 500 14px/1 var(--f-sans); color: var(--ink); background: var(--panel); border: 1px solid var(--rule); border-radius: 999px; padding: 7px 11px; cursor: pointer; }
+.chip[aria-pressed="true"] { color: var(--ink); background: var(--accent-soft); border-color: var(--accent); }
+.chip .n { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink-3); }
+.check { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; color: var(--ink); cursor: pointer; }
+.btn { appearance: none; font: 600 15px/1 var(--f-sans); color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 5px; padding: 8px 12px; cursor: pointer; }
+.count { font-size: 15px; color: var(--ink-2); margin: 0 0 8px; }
+
+/* ledger */
+.ledger { display: grid; border-top: 1px solid var(--rule); }
+.row { display: grid; grid-template-columns: 104px 150px 42px minmax(0, 1fr) auto; gap: 16px; align-items: start; padding: 14px 8px; border-bottom: 1px solid var(--rule-2); cursor: pointer; }
+.row:hover { background: var(--accent-soft); }
+.row .date { font-family: var(--f-mono); font-size: 14px; color: var(--ink-2); padding-top: 2px; }
+.row .title { font-weight: 600; font-size: 17px; line-height: 1.38; overflow-wrap: anywhere; }
+.row .sub { font-size: 14.5px; color: var(--ink-3); margin-top: 4px; overflow-wrap: anywhere; }
+.row .sub .mono { font-size: 13px; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; max-width: 210px; }
+.case { display: inline-flex; align-items: center; font-size: 15px; color: var(--ink); white-space: nowrap; }
+.cls { display: inline-block; font-family: var(--f-mono); font-size: 13px; font-weight: 500; padding: 1px 5px; border: 1px solid var(--rule); border-radius: 3px; color: var(--ink-2); text-align: center; }
+.cls.flag { border-style: dashed; border-color: var(--warn); }
+.tag { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; line-height: 1; padding: 4px 7px; border-radius: 999px; border: 1px solid var(--rule); color: var(--ink-2); white-space: nowrap; }
+.tag.core { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.tag.read { border-color: var(--ok); color: var(--ok); }
+.tag.chk { border-color: var(--rule); }
+.empty { padding: 24px 6px; color: var(--ink-2); }
+
+/* timeline */
+.tl-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--rule-2); border-radius: 6px; padding: 8px 4px; }
+.tl-wrap svg { display: block; min-width: 760px; width: 100%; height: auto; }
+.tl-note { font-size: 15px; color: var(--ink-2); margin: 10px 0 0; max-width: 80ch; }
+svg .grid { stroke: var(--rule-2); stroke-width: 1; }
+svg .lane { fill: none; stroke: var(--rule); stroke-width: 1; }
+svg .lbl { fill: var(--ink); font: 600 15px var(--f-sans); }
+svg .yr { fill: var(--ink-2); font: 14px var(--f-mono); }
+svg .pt { cursor: pointer; }
+svg .pt:focus { outline: none; }
+svg .pt:focus-visible circle, svg .pt:hover circle { stroke: var(--focus); stroke-width: 3; }
+
+/* tables */
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 15.5px; line-height: 1.45; }
+th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--rule-2); }
+th { font: 600 12.5px/1.3 var(--f-mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-2); background: var(--tint); position: sticky; top: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.group td { background: var(--tint); font-weight: 700; font-stretch: 90%; font-size: 17px; }
+tr.click { cursor: pointer; }
+tr.click:hover td { background: var(--accent-soft); }
+tr.missing td { color: var(--ink-2); font-style: italic; }
+tr.total td { font-weight: 700; border-top: 2px solid var(--rule); }
+td .mono { font-size: 13px; overflow-wrap: anywhere; }
+td.mono { white-space: nowrap; font-size: 14px; }
+.caption { font-weight: 700; font-size: 19px; margin: 0 0 8px; }
+.tnotes { font-size: 15px; color: var(--ink-2); max-width: 90ch; margin: 12px 0 0; padding-left: 20px; }
+.tnotes li { margin: 4px 0; }
+.section { display: grid; gap: 12px; margin-bottom: 30px; }
+.section h2 { margin: 0; font-size: 22px; font-weight: 720; font-stretch: 85%; }
+.section p { margin: 0; max-width: 78ch; color: var(--ink-2); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-left: 2px solid var(--rule); }
+.steps li { position: relative; padding: 4px 0 12px 18px; }
+.steps li::before { content: ""; position: absolute; left: -6px; top: 10px; width: 10px; height: 10px; border-radius: 50%; background: var(--panel); border: 2px solid var(--accent); }
+.steps .when { font-family: var(--f-mono); font-size: 13.5px; color: var(--ink-3); }
+.steps .what { color: var(--ink); }
+.cols2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.cols2 > * { min-width: 0; }
+
+/* drawer */
+.scrim { position: fixed; inset: 0; background: var(--scrim); z-index: 20; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(500px, 100%); background: var(--panel); border-left: 1px solid var(--rule); box-shadow: var(--shadow); z-index: 21; display: flex; flex-direction: column; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.dhead { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 18px 18px 12px; border-bottom: 1px solid var(--rule-2); }
+.dhead h3 { margin: 6px 0 0; font-size: 21px; line-height: 1.25; font-weight: 700; font-stretch: 90%; text-wrap: balance; overflow-wrap: anywhere; }
+.x { appearance: none; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); border-radius: 5px; font: 600 15px/1 var(--f-sans); padding: 9px 12px; cursor: pointer; }
+.dbody { overflow-y: auto; padding: 14px 18px 24px; display: grid; gap: 16px; }
+.dnote { margin: 0; padding: 14px 16px; background: var(--tint); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; font-size: 16px; line-height: 1.5; }
+.dl { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 10px 14px; margin: 0; font-size: 15.5px; }
+.dl dt { color: var(--ink-3); font-size: 12.5px; font-family: var(--f-mono); text-transform: uppercase; letter-spacing: 0.04em; padding-top: 2px; }
+.dl dd { margin: 0; overflow-wrap: anywhere; }
+.copy { appearance: none; margin-left: 8px; font: 600 12px/1 var(--f-sans); color: var(--accent); background: none; border: 1px solid var(--rule); border-radius: 4px; padding: 4px 7px; cursor: pointer; }
+.warnline { color: var(--warn); font-size: 14.5px; }
+
+@media (max-width: 760px) {
+  .wrap { padding-inline: 16px; }
+  .row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .row .meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .badges { justify-content: flex-start; max-width: none; }
+  .dl { grid-template-columns: minmax(0, 1fr); gap: 2px 0; }
+  .dl dd { margin-bottom: 8px; }
+}
+@media (min-width: 761px) { .row .meta { display: contents; } }
+@media (prefers-reduced-motion: no-preference) { .drawer { animation: slide 0.18s ease-out; } @keyframes slide { from { transform: translateX(16px); opacity: 0.6; } to { transform: none; opacity: 1; } } }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="eyebrow">BDS Corpus Archive &middot; state on 3 October 2026</div>
+    <h1>Biometric Condition Corpus</h1>
+    <p class="lede">Documents on biometric identification as a condition of assistance. UNHCR's identity-management guidance is read as the node, and four disputes from 2023 to 2026 as its recontextualisations: Gaza, Malaysia, South Africa and Mizoram.</p>
+    <div class="casebar" id="casebar" role="img"></div>
+    <div class="legend" id="legend"></div>
+    <dl class="stats" id="stats"></dl>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button role="tab" id="t-ledger" aria-controls="v-ledger" aria-selected="true">Ledger</button>
+    <button role="tab" id="t-timeline" aria-controls="v-timeline" aria-selected="false">Timeline</button>
+    <button role="tab" id="t-core" aria-controls="v-core" aria-selected="false">Core corpus</button>
+    <button role="tab" id="t-dataset" aria-controls="v-dataset" aria-selected="false">Dataset</button>
+    <button role="tab" id="t-provenance" aria-controls="v-provenance" aria-selected="false">Provenance</button>
+  </nav>
+
+  <section id="v-ledger" role="tabpanel" aria-labelledby="t-ledger">
+    <div class="filters">
+      <div class="frow">
+        <input type="search" id="q" placeholder="Search titles, sources and doc_ids" aria-label="Search titles, sources and doc_ids">
+        <select id="sort" aria-label="Sort order">
+          <option value="date">Oldest first</option>
+          <option value="date-desc">Newest first</option>
+          <option value="case">By case</option>
+        </select>
+        <button class="btn" id="reset" type="button">Reset</button>
+      </div>
+      <div class="frow"><span class="flabel">Case</span><span id="fcase" class="frow"></span></div>
+      <div class="frow"><span class="flabel">Class</span><span id="fcls" class="frow"></span></div>
+      <div class="frow"><span class="flabel">Saved</span>
+        <select id="fbatch" aria-label="When saved">
+          <option value="all">Any time</option>
+          <option value="b1">1 Oct, earlier session</option>
+          <option value="b2">2 Oct</option>
+          <option value="b3">3 Oct, first batch</option>
+          <option value="b4">3 Oct, second batch</option>
+        </select>
+        <label class="check"><input type="checkbox" id="fcore"> Core corpus only</label>
+        <label class="check"><input type="checkbox" id="fflag"> Class to settle</label>
+      </div>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="ledger" id="ledgerList"></div>
+  </section>
+
+  <section id="v-timeline" role="tabpanel" aria-labelledby="t-timeline" hidden>
+    <div class="tl-wrap"><svg id="tl" role="group" aria-label="Documents by date and case"></svg></div>
+    <p class="tl-note">Each mark is one saved document, placed by its date of publication. A ring marks the proposed core corpus; a hollow mark is an approximate date (undated pages, month-only dates, versions). Select a mark to open the record.</p>
+  </section>
+
+  <section id="v-core" role="tabpanel" aria-labelledby="t-core" hidden>
+    <div class="section">
+      <p class="caption">Table 2. Proposed core corpus</p>
+      <div class="tbl-wrap"><table id="coretbl"></table></div>
+      <ol class="tnotes">
+        <li>Positions: the text that sets the condition; the agency or state that runs or backs it; the official answer to contestation; an institutional refusal or contestation; and a text in which the people subject to the condition speak. The node has its own positions: the standard, its articulation in Bangladesh, and an agency's response to refusal by the people themselves.</li>
+        <li>Twenty-one documents are saved. Three Mizoram texts are still to be found, and the GHF pilot notice of 18 August 2025 is still to be saved.</li>
+        <li>The class column applies the definitions of the April 2026 collection; a dashed box marks a file whose name carries another class.</li>
+        <li>The Diplomat published "UNHCR Defends Biometric Enrollment Push" on 12 June 2025; its doc_id keeps the corpus record's date.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="v-dataset" role="tabpanel" aria-labelledby="t-dataset" hidden>
+    <div class="section">
+      <p class="caption">Table 1. Dataset by case and document class</p>
+      <div class="tbl-wrap"><table id="dstbl"></table></div>
+      <ol class="tnotes">
+        <li>OC, organisational communications; MC, media coverage; CS, civil society reports; PA, policy and governance documents. Counts apply the definitions of the April 2026 collection.</li>
+        <li>Five documents are PDFs; the other 78 are web texts saved from the browser with a provenance header. Every file has a SHA-256 in the archive log.</li>
+      </ol>
+    </div>
+    <div class="cols2">
+      <div class="section">
+        <h2>When the files were saved</h2>
+        <div class="tbl-wrap"><table id="batchtbl"></table></div>
+      </div>
+      <div class="section">
+        <h2>How the text was copied</h2>
+        <div class="tbl-wrap"><table id="copytbl"></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-provenance" role="tabpanel" aria-labelledby="t-provenance" hidden>
+    <div class="section">
+      <h2>Agents</h2>
+      <p>Thirty-three helper agents ran in this working session on 2 and 3 October 2026. Each searched and read web pages and reported back in text; none saved, edited or deleted a file. Four supplied leads that entered the corpus.</p>
+      <div class="tbl-wrap"><table id="agenttbl"></table></div>
+    </div>
+    <div class="section">
+      <h2>How the corpus was built on 3 October</h2>
+      <ol class="steps" id="steps"></ol>
+    </div>
+    <div class="cols2">
+      <div class="section">
+        <h2>Not saved</h2>
+        <div class="tbl-wrap"><table id="nstbl"></table></div>
+      </div>
+      <div class="section">
+        <h2>Conventions to settle</h2>
+        <div class="tbl-wrap"><table id="convtbl"></table></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-labelledby="dtitle" role="dialog" aria-modal="true">
+  <div class="dhead">
+    <div><div class="eyebrow" id="dcase"></div><h3 id="dtitle"></h3></div>
+    <button class="x" id="dclose" type="button">Close</button>
+  </div>
+  <div class="dbody" id="dbody"></div>
+</aside>
+
+<script>
+const DOCS = __DOCS__;
+const CASES = [
+  { k: "node", name: "Node: UNHCR guidance", short: "Node", color: "var(--c-node)" },
+  { k: "bd", name: "Bangladesh (node instance)", short: "Bangladesh", color: "var(--c-bd)" },
+  { k: "gaza", name: "Gaza", short: "Gaza", color: "var(--c-gaza)" },
+  { k: "my", name: "Malaysia", short: "Malaysia", color: "var(--c-my)" },
+  { k: "za", name: "South Africa", short: "South Africa", color: "var(--c-za)" },
+  { k: "mz", name: "Mizoram, India", short: "Mizoram", color: "var(--c-mz)" }
+];
+const CLASSES = { OC: "Organisational communications", MC: "Media coverage", CS: "Civil society reports", PA: "Policy and governance documents" };
+const BATCH = { b1: "1 Oct, earlier session", b2: "2 Oct", b3: "3 Oct, first batch (12:20 to 12:43)", b4: "3 Oct, second batch (14:20 to 14:38)" };
+const COPY = { article: "Text of the article element", main: "Text of the main element", body: "Text of the whole page body", "dom:body": "Full page text, including collapsed sections", pdf: "PDF file" };
+const POS = {
+  standard: "Standard", articulation: "Articulation", response: "Response to refusal",
+  sets: "Sets the condition", runs: "Runs or backs it", answers: "Answers contestation", contests: "Refuses or contests", voice: "Voice of those subject to it"
+};
+const POS_ORDER = ["standard", "articulation", "response", "sets", "runs", "answers", "contests", "voice"];
+const PLACEHOLDERS = [
+  { ck: "gaza", pos: "sets", title: "GHF, “Announcing New Pilot For Families to Reserve Aid Parcels”", date: "18 Aug 2025", cls: "OC", status: "To be saved by Marco: ghf.org no longer resolves; a Wayback capture of 16 Dec 2025 exists" },
+  { ck: "mz", pos: "sets", title: "Ministry of Home Affairs (Delhi), directive on biometrics of Myanmar nationals", date: "2023", cls: "PA", status: "Not yet found" },
+  { ck: "mz", pos: "runs", title: "Government of Mizoram, statement on the enrolment", date: "2025", cls: "OC", status: "Not yet found" },
+  { ck: "mz", pos: "answers", title: "Lok Sabha or Rajya Sabha answer on the enrolment", date: "2023 to 2026", cls: "PA", status: "Not yet found" }
+];
+const DATE_FIX = { "06_MC_2025-06-01_Diplomat_002": "2025-06-12" };
+const NOT_SAVED = [
+  { what: "GHF, “Announcing New Pilot For Families to Reserve Aid Parcels” (18 Aug 2025)", why: "ghf.org no longer resolves. A Wayback capture of 16 Dec 2025 exists; Marco can save it from his own browser." },
+  { what: "235sa, “SASSA: Government’s Foot in the Door”", why: "The site refuses automated access; Marco can save it from his own browser." },
+  { what: "NST, “UNHCR says refugee processing follows standards, welcomes closer ties with Putrajaya” (Jul 2026)", why: "The site refuses automated access; Marco can save it from his own browser." },
+  { what: "Wayback copy (12 Jun 2026) of the UNHCR Malaysia DPP notice", why: "Captured after the page's last update, so it cannot show the January wording." }
+];
+const AGENTS = [
+  { g: "UNHCR global texts for the node", n: 1, when: "3 Oct, 11:47 to 12:08", work: "28 searches, 133 page reads", used: "Led to section 5.2 of the Guidance, which the main session read and saved" },
+  { g: "Gap searches: Gaza, Malaysia, South Africa", n: 3, when: "3 Oct, 13:29 to 13:52", work: "206 searches, 356 page reads", used: "37 of the second batch came from their ranked lists" },
+  { g: "Second sources for the Bangladesh case", n: 1, when: "2 Oct, 11:06 to 11:12", work: "10 searches, 21 page reads", used: "No document saved; notes on the record" },
+  { g: "Ethiopia, Rwanda, Yemen and India (two rounds)", n: 8, when: "3 Oct, 11:38 to 12:09", work: "Stopped by Marco before reporting", used: "Nothing" },
+  { g: "Checks on the article's sources and facts, one draft review", n: 20, when: "2 Oct, 08:50 to 11:48", work: "Literature and fact checks", used: "Not corpus work" }
+];
+const STEPS = [
+  { when: "11:35 to 13:05", what: "Marco sets the design: UNHCR's identity-management discourse as the node, and four recent disputes as cases." },
+  { when: "11:47 to 12:08", what: "One agent reads UNHCR's global texts on registration and identity management." },
+  { when: "12:10 to 12:31", what: "The main session searches for disputes from 2021 to 2026 (32 searches, 25 page reads). Marco chooses Gaza, Malaysia, South Africa and Mizoram." },
+  { when: "12:20 to 12:43", what: "First batch: 39 documents saved into CASE09 to CASE12 after Marco's approval." },
+  { when: "13:29 to 13:52", what: "Three agents search the gaps: actors' own texts for Gaza, UNHCR's words for Malaysia, refusal in South Africa." },
+  { when: "about 14:10", what: "Section 5.2 of the UNHCR Guidance is read on the live page and its wording checked." },
+  { when: "14:20 to 14:38", what: "Second batch: 39 documents saved into NODE and CASE09 to CASE11 after Marco's approval of 42 proposed items." },
+  { when: "14:40 to 14:55", what: "Every file hashed and its content checked; 22 quotations verified in the saved copies; archive log 1.4 and working log 3.32 written." }
+];
+
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const caseOf = (k) => CASES.find((c) => c.k === k);
+const effCls = (d) => d.conv || (d.id === "06_PA_2025-05-22_RefIntl_001" ? "CS" : d.cls);
+const isoDate = (d) => DATE_FIX[d.id] || d.date.replace("-xx", "-15");
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+function niceDate(d) {
+  const raw = DATE_FIX[d.id] || d.date;
+  const [y, m, dd] = raw.split("-");
+  const mon = MONTHS[parseInt(m, 10) - 1];
+  return dd === "xx" ? mon + " " + y : parseInt(dd, 10) + " " + mon + " " + y;
+}
+const kb = (b) => b >= 1048576 ? (b / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(b / 1024)) + " KB";
+
+/* masthead */
+(function masthead() {
+  const total = DOCS.length;
+  $("#casebar").innerHTML = CASES.map((c) => {
+    const n = DOCS.filter((d) => d.ck === c.k).length;
+    return '<span style="width:' + (n / total * 100) + '%;background:' + c.color + '" title="' + esc(c.name) + ": " + n + '"></span>';
+  }).join("");
+  $("#casebar").setAttribute("aria-label", CASES.map((c) => c.name + " " + DOCS.filter((d) => d.ck === c.k).length).join(", "));
+  $("#legend").innerHTML = CASES.map((c) => '<span><span class="dot" style="background:' + c.color + '"></span>' + esc(c.name) + " <b>" + DOCS.filter((d) => d.ck === c.k).length + "</b></span>").join("");
+  const stats = [["Saved documents", total], ["Core corpus", DOCS.filter((d) => d.core).length], ["Read in full", DOCS.filter((d) => d.read).length], ["PDFs", DOCS.filter((d) => d.copy === "pdf").length], ["Not saved", NOT_SAVED.length]];
+  $("#stats").innerHTML = stats.map(([t, v]) => "<div><dt>" + t + "</dt><dd>" + v + "</dd></div>").join("");
+})();
+
+/* ledger */
+const state = { q: "", cases: new Set(), classes: new Set(), batch: "all", core: false, flag: false, sort: "date" };
+function chips() {
+  $("#fcase").innerHTML = CASES.map((c) => '<button type="button" class="chip" data-case="' + c.k + '" aria-pressed="' + state.cases.has(c.k) + '"><span class="dot" style="background:' + c.color + '"></span>' + esc(c.short) + ' <span class="n">' + DOCS.filter((d) => d.ck === c.k).length + "</span></button>").join("");
+  $("#fcls").innerHTML = Object.keys(CLASSES).map((k) => '<button type="button" class="chip" data-cls="' + k + '" aria-pressed="' + state.classes.has(k) + '" title="' + esc(CLASSES[k]) + '"><span class="mono">' + k + '</span> <span class="n">' + DOCS.filter((d) => effCls(d) === k).length + "</span></button>").join("");
+}
+function filtered() {
+  const q = state.q.trim().toLowerCase();
+  let out = DOCS.filter((d) => {
+    if (state.cases.size && !state.cases.has(d.ck)) return false;
+    if (state.classes.size && !state.classes.has(effCls(d))) return false;
+    if (state.batch !== "all" && d.batch !== state.batch) return false;
+    if (state.core && !d.core) return false;
+    if (state.flag && !(d.conv || d.convb)) return false;
+    if (q && !(d.title + " " + d.src + " " + d.id + " " + (d.note || "")).toLowerCase().includes(q)) return false;
+    return true;
+  });
+  const order = CASES.map((c) => c.k);
+  if (state.sort === "date") out.sort((a, b) => isoDate(a).localeCompare(isoDate(b)));
+  if (state.sort === "date-desc") out.sort((a, b) => isoDate(b).localeCompare(isoDate(a)));
+  if (state.sort === "case") out.sort((a, b) => order.indexOf(a.ck) - order.indexOf(b.ck) || isoDate(a).localeCompare(isoDate(b)));
+  return out;
+}
+function clsBox(d) {
+  const flag = d.conv ? ' flag" title="Filed as ' + d.cls + "; the April definitions give " + d.conv : "";
+  return '<span class="cls' + flag + '">' + effCls(d) + "</span>";
+}
+function renderLedger() {
+  const list = filtered();
+  $("#count").textContent = list.length + (list.length === 1 ? " document" : " documents") + " shown of " + DOCS.length + (list.some((d) => d.approx) ? " \u00b7 * approximate date" : "");
+  if (!list.length) { $("#ledgerList").innerHTML = '<div class="empty">No document matches these filters. Reset them to see the whole corpus.</div>'; return; }
+  $("#ledgerList").innerHTML = list.map((d) => {
+    const c = caseOf(d.ck);
+    const tags = [];
+    if (d.core) tags.push('<span class="tag core">Core: ' + esc(POS[d.core]) + "</span>");
+    if (d.read) tags.push('<span class="tag read">Read in full</span>');
+    else if (d.checked) tags.push('<span class="tag chk">Quotation checked</span>');
+    return '<div class="row" role="button" tabindex="0" data-id="' + d.id + '">' +
+      '<div class="meta"><span class="date">' + niceDate(d) + (d.approx ? "*" : "") + '</span><span class="case"><span class="dot" style="background:' + c.color + '"></span>' + esc(c.short) + "</span>" + clsBox(d) + "</div>" +
+      '<div><div class="title">' + esc(d.title) + '</div><div class="sub">' + esc(d.src) + ' &middot; <span class="mono">' + d.id + "</span></div></div>" +
+      '<div class="badges">' + tags.join("") + "</div></div>";
+  }).join("");
+}
+$("#fcase").addEventListener("click", (e) => { const b = e.target.closest("[data-case]"); if (!b) return; const k = b.dataset.case; state.cases.has(k) ? state.cases.delete(k) : state.cases.add(k); chips(); renderLedger(); });
+$("#fcls").addEventListener("click", (e) => { const b = e.target.closest("[data-cls]"); if (!b) return; const k = b.dataset.cls; state.classes.has(k) ? state.classes.delete(k) : state.classes.add(k); chips(); renderLedger(); });
+$("#q").addEventListener("input", (e) => { state.q = e.target.value; renderLedger(); });
+$("#sort").addEventListener("change", (e) => { state.sort = e.target.value; renderLedger(); });
+$("#fbatch").addEventListener("change", (e) => { state.batch = e.target.value; renderLedger(); });
+$("#fcore").addEventListener("change", (e) => { state.core = e.target.checked; renderLedger(); });
+$("#fflag").addEventListener("change", (e) => { state.flag = e.target.checked; renderLedger(); });
+$("#reset").addEventListener("click", () => {
+  Object.assign(state, { q: "", batch: "all", core: false, flag: false, sort: "date" }); state.cases.clear(); state.classes.clear();
+  $("#q").value = ""; $("#fbatch").value = "all"; $("#fcore").checked = false; $("#fflag").checked = false; $("#sort").value = "date";
+  chips(); renderLedger();
+});
+$("#ledgerList").addEventListener("click", (e) => { const r = e.target.closest(".row"); if (r) openDoc(r.dataset.id); });
+$("#ledgerList").addEventListener("keydown", (e) => { if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("row")) { e.preventDefault(); openDoc(e.target.dataset.id); } });
+
+/* drawer */
+let lastFocus = null;
+function openDoc(id) {
+  const d = DOCS.find((x) => x.id === id); if (!d) return;
+  lastFocus = document.activeElement;
+  const c = caseOf(d.ck);
+  $("#dcase").innerHTML = '<span class="dot" style="background:' + c.color + '"></span>' + esc(d.case);
+  $("#dtitle").textContent = d.title;
+  const rows = [];
+  rows.push(["doc_id", '<span class="mono">' + d.id + '</span><button class="copy" type="button" data-copy="' + d.id + '">Copy</button>']);
+  rows.push(["Source", esc(d.src)]);
+  rows.push(["Date", niceDate(d) + (d.approx ? '<div class="warnline">' + esc(d.approx) + "</div>" : "") + (DATE_FIX[d.id] ? '<div class="warnline">Published 12 June 2025; the doc_id keeps the corpus record’s date.</div>' : "")]);
+  rows.push(["Class", '<span class="mono">' + effCls(d) + "</span> " + esc(CLASSES[effCls(d)]) + (d.conv ? '<div class="warnline">Filed as ' + d.cls + "; the April 2026 definitions give " + d.conv + ".</div>" : "") + (d.convb ? '<div class="warnline">Borderline: filed as ' + d.cls + "; could be " + d.convb + ".</div>" : "") + (d.convnote ? '<div class="warnline">' + esc(d.convnote) + "</div>" : "")]);
+  if (d.core) rows.push(["Core", esc(POS[d.core])]);
+  rows.push(["Status", d.read ? "Read in full" : (d.checked ? "Saved; a quotation checked in the copy" : "Saved; not yet read in full")]);
+  rows.push(["Address", d.url ? '<a href="' + esc(d.url) + '" target="_blank" rel="noopener">' + esc(d.url) + "</a>" : "Not recorded"]);
+  rows.push(["Saved", esc(BATCH[d.batch])]);
+  rows.push(["Retrieved", d.retr ? '<span class="mono">' + esc(d.retr) + (d.retr.indexOf("Wayback") < 0 ? " UTC" : "") + "</span>" : "Downloaded as a PDF; the time is in the archive log"]);
+  rows.push(["Copy", esc(COPY[d.copy] || d.copy)]);
+  rows.push(["Size", kb(d.bytes) + " &middot; " + (d.words ? d.words.toLocaleString("en-GB") + " words" : "") + (d.pages ? " &middot; " + d.pages + " pages" : "")]);
+  rows.push(["SHA-256", '<span class="mono">' + d.sha + "&hellip;</span>"]);
+  rows.push(["Page title", esc(d.raw || d.title)]);
+  $("#dbody").innerHTML = (d.note ? '<p class="dnote">' + esc(d.note) + "</p>" : "") + '<dl class="dl">' + rows.map(([k, v]) => "<dt>" + k + "</dt><dd>" + v + "</dd>").join("") + "</dl>";
+  $("#scrim").hidden = false; $("#drawer").hidden = false; $("#dclose").focus();
+}
+function closeDoc() { $("#scrim").hidden = true; $("#drawer").hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+$("#dclose").addEventListener("click", closeDoc);
+$("#scrim").addEventListener("click", closeDoc);
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("#drawer").hidden) closeDoc(); });
+$("#dbody").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-copy]"); if (!b) return;
+  const text = b.dataset.copy;
+  const done = () => { b.textContent = "Copied"; setTimeout(() => { b.textContent = "Copy"; }, 1400); };
+  const fallback = () => { const r = document.createRange(); const span = b.previousElementSibling; r.selectNodeContents(span); const s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected"; };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (err) { fallback(); }
+});
+
+/* timeline */
+function renderTimeline() {
+  const svg = $("#tl");
+  const W = 1000, left = 150, right = 980, top = 44, laneH = 100;
+  const H = top + laneH * CASES.length + 10;
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  const t0 = Date.UTC(2023, 0, 1), t1 = Date.UTC(2027, 0, 1);
+  const x = (iso) => { const [y, m, d] = iso.split("-").map(Number); return left + (Date.UTC(y, m - 1, d) - t0) / (t1 - t0) * (right - left); };
+  let out = "";
+  for (let y = 2023; y <= 2027; y++) {
+    const xx = x(y + "-01-01");
+    out += '<line class="grid" x1="' + xx + '" y1="' + (top - 14) + '" x2="' + xx + '" y2="' + (H - 6) + '"/>';
+    if (y < 2027) out += '<text class="yr" x="' + (xx + 6) + '" y="' + (top - 20) + '">' + y + "</text>";
+  }
+  CASES.forEach((c, i) => {
+    const cy = top + i * laneH + laneH / 2;
+    out += '<line class="lane" x1="' + left + '" y1="' + cy + '" x2="' + right + '" y2="' + cy + '"/>';
+    out += '<text class="lbl" x="12" y="' + (cy + 4) + '">' + esc(c.short) + "</text>";
+    const docs = DOCS.filter((d) => d.ck === c.k).sort((a, b) => isoDate(a).localeCompare(isoDate(b)));
+    const placed = [];
+    docs.forEach((d) => {
+      const px = x(isoDate(d));
+      let k = 0; const offs = [0, -13, 13, -26, 26, -39, 39];
+      while (placed.some((p) => Math.abs(p.x - px) < 10 && p.k === k) && k < offs.length - 1) k++;
+      placed.push({ x: px, k: k });
+      const py = cy + offs[k];
+      const r = d.core ? 6.5 : 5.5;
+      const fill = d.approx ? "var(--panel)" : c.color;
+      out += '<g class="pt" tabindex="0" role="button" data-id="' + d.id + '" aria-label="' + esc(d.title + ", " + niceDate(d)) + '">' +
+        "<title>" + esc(niceDate(d) + " · " + d.title + " (" + d.src + ")") + "</title>" +
+        (d.core ? '<circle cx="' + px + '" cy="' + py + '" r="' + (r + 3.5) + '" fill="none" stroke="var(--accent)" stroke-width="1.6"/>' : "") +
+        '<circle cx="' + px + '" cy="' + py + '" r="' + r + '" fill="' + fill + '" stroke="' + c.color + '" stroke-width="2"/></g>';
+    });
+  });
+  svg.innerHTML = out;
+}
+$("#tl").addEventListener("click", (e) => { const g = e.target.closest(".pt"); if (g) openDoc(g.dataset.id); });
+$("#tl").addEventListener("keydown", (e) => { const g = e.target.closest && e.target.closest(".pt"); if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openDoc(g.dataset.id); } });
+
+/* tables */
+function renderCore() {
+  let html = '<thead><tr><th>Position</th><th>Document</th><th>Date</th><th>Class</th><th>doc_id</th></tr></thead><tbody>';
+  CASES.forEach((c) => {
+    html += '<tr class="group"><td colspan="5"><span class="dot" style="background:' + c.color + '"></span>' + esc(c.name) + "</td></tr>";
+    const items = DOCS.filter((d) => d.ck === c.k && d.core).map((d) => ({ d: d, pos: d.core }))
+      .concat(PLACEHOLDERS.filter((p) => p.ck === c.k).map((p) => ({ p: p, pos: p.pos })));
+    items.sort((a, b) => POS_ORDER.indexOf(a.pos) - POS_ORDER.indexOf(b.pos) || (a.d ? 0 : 1) - (b.d ? 0 : 1));
+    items.forEach((it) => {
+      if (it.d) {
+        const d = it.d;
+        html += '<tr class="click" tabindex="0" data-id="' + d.id + '"><td>' + esc(POS[it.pos]) + "</td><td><strong>" + esc(d.title) + "</strong><br><span style=\"color:var(--ink-3);font-size:14.5px\">" + esc(d.src) + "</span></td><td class=\"mono\">" + niceDate(d) + (d.approx ? "*" : "") + "</td><td>" + clsBox(d) + '</td><td><span class="mono">' + d.id + "</span></td></tr>";
+      } else {
+        const p = it.p;
+        html += '<tr class="missing"><td>' + esc(POS[it.pos]) + "</td><td>" + esc(p.title) + "</td><td class=\"mono\">" + esc(p.date) + '</td><td><span class="cls">' + p.cls + "</span></td><td>" + esc(p.status) + "</td></tr>";
+      }
+    });
+  });
+  $("#coretbl").innerHTML = html + "</tbody>";
+}
+$("#coretbl").addEventListener("click", (e) => { const r = e.target.closest("tr.click"); if (r) openDoc(r.dataset.id); });
+$("#coretbl").addEventListener("keydown", (e) => { const r = e.target.closest && e.target.closest("tr.click"); if (r && e.key === "Enter") openDoc(r.dataset.id); });
+
+function renderDataset() {
+  const groups = [
+    { name: "Node: UNHCR guidance", f: (d) => d.folder === "NODE", dates: "Undated; retrieved Oct 2026", lang: "English" },
+    { name: "Bangladesh (instance of the node)", f: (d) => d.folder === "CASE06", dates: "May 2023 to Jan 2026", lang: "English" },
+    { name: "Gaza", f: (d) => d.ck === "gaza", dates: "May to Sep 2025", lang: "English" },
+    { name: "Malaysia", f: (d) => d.ck === "my", dates: "Jul 2025 to Oct 2026", lang: "English; Malay (8)" },
+    { name: "South Africa", f: (d) => d.ck === "za", dates: "Sep 2023 to Aug 2026", lang: "English" },
+    { name: "Mizoram, India", f: (d) => d.ck === "mz", dates: "Sep 2023 to Mar 2026", lang: "English" }
+  ];
+  const ks = ["OC", "MC", "CS", "PA"];
+  let html = '<thead><tr><th>Case</th><th class="num">Docs</th>' + ks.map((k) => '<th class="num">' + k + "</th>").join("") + '<th>Dates</th><th>Language</th><th class="num">Core</th></tr></thead><tbody>';
+  const tot = { n: 0, OC: 0, MC: 0, CS: 0, PA: 0, core: 0 };
+  groups.forEach((g) => {
+    const ds = DOCS.filter(g.f);
+    const cnt = {}; ks.forEach((k) => { cnt[k] = ds.filter((d) => effCls(d) === k).length; tot[k] += cnt[k]; });
+    const core = ds.filter((d) => d.core).length; tot.n += ds.length; tot.core += core;
+    html += "<tr><td>" + esc(g.name) + '</td><td class="num">' + ds.length + "</td>" + ks.map((k) => '<td class="num">' + cnt[k] + "</td>").join("") + "<td>" + g.dates + "</td><td>" + g.lang + '</td><td class="num">' + core + "</td></tr>";
+  });
+  html += '<tr class="total"><td>Total</td><td class="num">' + tot.n + "</td>" + ks.map((k) => '<td class="num">' + tot[k] + "</td>").join("") + '<td>May 2023 to Oct 2026</td><td></td><td class="num">' + tot.core + "</td></tr></tbody>";
+  $("#dstbl").innerHTML = html;
+  $("#batchtbl").innerHTML = '<thead><tr><th>When</th><th class="num">Files</th></tr></thead><tbody>' + Object.keys(BATCH).map((b) => "<tr><td>" + BATCH[b] + '</td><td class="num">' + DOCS.filter((d) => d.batch === b).length + "</td></tr>").join("") + "</tbody>";
+  $("#copytbl").innerHTML = '<thead><tr><th>Copy</th><th class="num">Files</th></tr></thead><tbody>' + Object.keys(COPY).map((k) => "<tr><td>" + COPY[k] + '</td><td class="num">' + DOCS.filter((d) => d.copy === k).length + "</td></tr>").join("") + "</tbody>";
+}
+
+function renderProvenance() {
+  let a = '<thead><tr><th>Work</th><th class="num">Agents</th><th>When (BST)</th><th>Effort</th><th>What entered the corpus</th></tr></thead><tbody>';
+  AGENTS.forEach((x) => { a += "<tr><td>" + esc(x.g) + '</td><td class="num">' + x.n + '</td><td class="mono">' + esc(x.when) + "</td><td>" + esc(x.work) + "</td><td>" + esc(x.used) + "</td></tr>"; });
+  a += '<tr class="total"><td>Total</td><td class="num">' + AGENTS.reduce((s, x) => s + x.n, 0) + "</td><td></td><td></td><td>Saving, hashing, checks and logs were done by the main session</td></tr></tbody>";
+  $("#agenttbl").innerHTML = a;
+  $("#steps").innerHTML = STEPS.map((s) => '<li><div class="when">' + esc(s.when) + '</div><div class="what">' + esc(s.what) + "</div></li>").join("");
+  $("#nstbl").innerHTML = '<thead><tr><th>Document</th><th>Reason</th></tr></thead><tbody>' + NOT_SAVED.map((n) => "<tr><td>" + esc(n.what) + "</td><td>" + esc(n.why) + "</td></tr>").join("") + "</tbody>";
+  const toCS = DOCS.filter((d) => d.conv === "CS").length, toPA = DOCS.filter((d) => d.conv === "PA").length;
+  const conv = [
+    ["Civil society texts filed as PA", toCS + " files", "The April definitions give CS (advocacy and NGO reports)."],
+    ["Governance texts filed as OC", toPA + " files", "The April definitions give PA (guidance, parliament, regulations, courts)."],
+    ["Borderline", "2 files", "The UNHCR Malaysia privacy notice and Israel's letter to the Security Council."],
+    ["Month-only dates", "2 files", "Written as xx in the doc_id; the April rule uses the first day for a year-only date."],
+    ["Undated pages", "2 files", "The doc_id carries the retrieval date."],
+    ["Wayback copies", "2 files", "DVB (live site down) and the Bangladesh notice (page removed); afternoon practice left such copies to Marco."]
+  ];
+  $("#convtbl").innerHTML = '<thead><tr><th>Issue</th><th>Extent</th><th>Note</th></tr></thead><tbody>' + conv.map((r) => "<tr><td>" + r[0] + '</td><td class="mono">' + r[1] + "</td><td>" + r[2] + "</td></tr>").join("") + "</tbody>";
+}
+
+/* tabs */
+const TABS = ["ledger", "timeline", "core", "dataset", "provenance"];
+function show(tab) {
+  if (!TABS.includes(tab)) tab = "ledger";
+  TABS.forEach((t) => { $("#t-" + t).setAttribute("aria-selected", String(t === tab)); $("#v-" + t).hidden = t !== tab; });
+  try { history.replaceState(null, "", "#" + tab); } catch (e) {}
+}
+TABS.forEach((t) => $("#t-" + t).addEventListener("click", () => show(t)));
+document.querySelector(".tabs").addEventListener("keydown", (e) => {
+  const i = TABS.findIndex((t) => $("#t-" + t) === document.activeElement); if (i < 0) return;
+  if (e.key === "ArrowRight" || e.key === "ArrowLeft") { const j = (i + (e.key === "ArrowRight" ? 1 : TABS.length - 1)) % TABS.length; $("#t-" + TABS[j]).focus(); show(TABS[j]); }
+});
+
+chips(); renderLedger(); renderTimeline(); renderCore(); renderDataset(); renderProvenance();
+show((location.hash || "").replace("#", "") || "ledger");
+</script>

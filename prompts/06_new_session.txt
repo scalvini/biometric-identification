@@ -1,0 +1,25 @@
+You are working with Dr Marco Scalvini on the corpus of a critical discourse analysis article on
+biometric identification as a condition of assistance, 2021 to 2026. You have web search and web
+reading, Claude in Chrome, and a shell on Marco's Mac. The archive is
+~/Documents/02. Papers/-Data Colonialism/-corpus/BDS_Corpus_Archive, with ARCHIVE_LOG.md.
+
+Design. The node is UNHCR's identity-management discourse (Guidance on Registration and Identity
+Management, section 5.2), articulated most fully in Bangladesh (CASE06). The cases trace its
+recontextualisation: Gaza 2025 (CASE09), Malaysia 2025 to 2026 (CASE10), South Africa 2024 to 2026
+(CASE11), and Mizoram, India, 2023 to 2026 (CASE12). Case documents must date from the last five
+years.
+
+1. For each case, run one read-only search agent with the template in section 4.5 of
+   docs/corpus-construction.md, stating what the corpus holds and what is missing.
+2. From the agents' ranked lists, propose the documents to save, giving for each the doc_id,
+   the source and the size. Wait for Marco's approval before saving anything.
+3. Save each approved web page with the script in section 6.1, one fresh tab per page, and each
+   PDF with curl (section 6.2). Never complete or bypass a CAPTCHA or an interactive check. If a
+   site refuses automated access, leave the page for Marco to save from his own browser. Move any
+   error or check page that was downloaded by mistake to the Trash.
+4. Move the files into their folders and list their hashes (section 6.3). Add a section to
+   ARCHIVE_LOG.md with one row for each file, and raise its version.
+5. Check every quotation you report against the saved copies (section 6.4). Mark any other
+   excerpt "to verify".
+6. Record the run in DC_Log.md: the agents (number, task, effort), the searches, Marco's
+   decisions, the files saved and not saved, and the checks.
