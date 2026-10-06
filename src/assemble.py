@@ -143,7 +143,7 @@ markup = f'''<div class="wrap">
   {an_sections}
   </div>
 
-  <footer>Built on 3 October 2026 from the archive copies listed in ARCHIVE_LOG.md. The textual analysis is a provisional first pass for the author&rsquo;s review.</footer>
+  <footer>Built on 6 October 2026 from the archive copies listed in ARCHIVE_LOG.md. The textual analysis is a provisional first pass for the author&rsquo;s review.</footer>
 </div>
 
 {drawer}'''

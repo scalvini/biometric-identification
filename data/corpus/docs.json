@@ -17,7 +17,7 @@
 "words": 7603,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "standard",
 "note": "UNHCR's global standard. Participation in registration is voluntary; individuals may refuse biometrics on legitimate grounds and be registered by alternative methods. Footnote 5 leaves the right to object to government policy where the host government leads registration.",
@@ -154,7 +154,7 @@
 "words": 548,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -175,7 +175,7 @@
 "words": 2418,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -196,7 +196,7 @@
 "words": 485,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -217,7 +217,7 @@
 "words": 1655,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -238,7 +238,7 @@
 "words": 600,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "core": "voice",
 "note": "Palestinians at the first GHF centre describe hunger and fear in their own words."
@@ -261,7 +261,7 @@
 "words": 921,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -282,7 +282,7 @@
 "words": 463,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "The humanitarian agencies reject delivery through Israeli hubs under \"conditions set by the Israeli military\"."
 },
@@ -304,7 +304,7 @@
 "words": 4739,
 "pages": 14,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "sets",
 "note": "GHF's overview memo: aid \"without regard to identity\", with no eligibility requirements.",
@@ -328,7 +328,7 @@
 "words": 15180,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "contests",
 "note": "UNICEF objects to facial recognition as a precondition of aid, used to screen beneficiaries \"for intelligence and military purposes\"."
@@ -351,7 +351,7 @@
 "words": 3205,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "UN Geneva's summary of the same briefing. It keeps UNICEF's concern and drops the intelligence and military purposes."
 },
@@ -373,7 +373,7 @@
 "words": 759,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "UN News keeps UNICEF's wording on screening and monitoring \"for intelligence and military purposes\"."
 },
@@ -395,7 +395,7 @@
 "words": 1587,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -416,7 +416,7 @@
 "words": 1522,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -437,7 +437,7 @@
 "words": 701,
 "pages": 3,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "runs",
 "note": "Israel's letter to the Security Council (\"strict oversight\"), with Fletcher's letter annexed, which claims the UN's own \"verification measures\".",
@@ -461,7 +461,7 @@
 "words": 6093,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -482,7 +482,7 @@
 "words": 914,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "OCHA calls the scheme \"surveillance-based rationing\"."
 },
@@ -504,7 +504,7 @@
 "words": 544,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": true,
 "note": "The humanitarian agencies state that they will not take part in any scheme that undermines humanitarian principles."
 },
@@ -526,7 +526,7 @@
 "words": 6229,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false,
 "core": "answers",
 "note": "The US Ambassador answers criticism of screening at the distribution sites (CBS interview transcript)."
@@ -549,7 +549,7 @@
 "words": 948,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "conv": "CS"
 },
@@ -571,7 +571,7 @@
 "words": 754,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "conv": "CS"
 },
@@ -593,7 +593,7 @@
 "words": 572,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -614,7 +614,7 @@
 "words": 677,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -635,7 +635,7 @@
 "words": 348,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -656,7 +656,7 @@
 "words": 1020,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -677,7 +677,7 @@
 "words": 642,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -698,7 +698,7 @@
 "words": 450,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -719,7 +719,7 @@
 "words": 349,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -740,7 +740,7 @@
 "words": 714,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "UNHCR's Representative is reported welcoming the DPP as strengthening national security through verified identity and biometrics."
 },
@@ -762,7 +762,7 @@
 "words": 430,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -783,7 +783,7 @@
 "words": 301,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -804,7 +804,7 @@
 "words": 504,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -825,7 +825,7 @@
 "words": 636,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -846,7 +846,7 @@
 "words": 367,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -867,7 +867,7 @@
 "words": 911,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -888,7 +888,7 @@
 "words": 244,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true
 },
 {
@@ -909,7 +909,7 @@
 "words": 715,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "voice",
 "note": "Myanmar nationals describe fear of arrest and doubt that signed returns are voluntary."
@@ -932,7 +932,7 @@
 "words": 1707,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -976,7 +976,7 @@
 "words": 592,
 "pages": 2,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "core": "sets",
 "note": "Home Ministry statement: the DPP records identity and biometrics under National Security Council Directive No. 23, to strengthen monitoring and enforcement."
@@ -999,7 +999,7 @@
 "words": 1083,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "UNHCR Malaysia privacy notice, \"last updated on 9 July 2026\"; its list of recipients of personal data is to be checked against the DPP.",
 "convb": "PA"
@@ -1022,7 +1022,7 @@
 "words": 37388,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "answers",
 "note": "The Deputy Minister tells the Senate that UNHCR has been directed to stop registering refugees while the DPP is restructured.",
@@ -1046,7 +1046,7 @@
 "words": 610,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "contests",
 "note": "UNHCR asks whether decisions to return to Myanmar were \"genuinely free and informed\"."
@@ -1069,7 +1069,7 @@
 "words": 440,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1090,7 +1090,7 @@
 "words": 863,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "UNHCR welcomes the DPP as a \"nationally owned approach\" and says it remains committed to supporting its implementation.",
 "approx": "Undated page; the date is the retrieval date."
@@ -1113,7 +1113,7 @@
 "words": 1502,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "conv": "CS"
 },
@@ -1135,7 +1135,7 @@
 "words": 1074,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "conv": "CS"
 },
@@ -1157,7 +1157,7 @@
 "words": 543,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false,
 "conv": "CS"
 },
@@ -1179,7 +1179,7 @@
 "words": 1670,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false,
 "conv": "CS"
 },
@@ -1201,7 +1201,7 @@
 "words": 2501,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false,
 "core": "voice",
 "note": "A beneficiary asks why identity must be verified again after bank checks."
@@ -1224,7 +1224,7 @@
 "words": 849,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1245,7 +1245,7 @@
 "words": 1485,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1266,7 +1266,7 @@
 "words": 837,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1287,7 +1287,7 @@
 "words": 692,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1308,7 +1308,7 @@
 "words": 1187,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1329,7 +1329,7 @@
 "words": 1793,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1350,7 +1350,7 @@
 "words": 684,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1371,7 +1371,7 @@
 "words": 2879,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1392,7 +1392,7 @@
 "words": 21525,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "contests",
 "note": "The High Court finds the database verification unreasonable and used \"with an ulterior purpose of excluding eligible SRD grant applicants\".",
@@ -1416,7 +1416,7 @@
 "words": 2299,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "sets",
 "note": "Regulation 4(2): applying for the grant counts as consent to the processing of the applicant's information.",
@@ -1441,7 +1441,7 @@
 "words": 759,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "The Minister's written reply: biometric verification \"is compulsory for all new SRD applications\".",
 "conv": "PA"
@@ -1464,7 +1464,7 @@
 "words": 493,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "core": "runs",
 "note": "SASSA announces compulsory biometric enrolment from September 2025; applications without biometric data go into review."
@@ -1487,7 +1487,7 @@
 "words": 8318,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "Committee report: facial biometrics introduced for people with unreadable fingerprints or missing fingers.",
 "conv": "PA"
@@ -1510,7 +1510,7 @@
 "words": 233,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false,
 "note": "SASSA Mpumalanga offers office help to grant recipients without a smartphone or data."
 },
@@ -1532,7 +1532,7 @@
 "words": 12960,
 "pages": 58,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false,
 "conv": "CS",
 "approx": "Undated booklet; the upload folder is September 2023."
@@ -1555,7 +1555,7 @@
 "words": 1191,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "conv": "CS"
 },
@@ -1577,7 +1577,7 @@
 "words": 2609,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "note": "The UBI Coalition objects that applicants must consent to sharing information with \"any government or private institution\".",
 "conv": "CS"
@@ -1600,7 +1600,7 @@
 "words": 40497,
 "pages": 116,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": false,
 "conv": "CS",
 "approx": "February 2025 on the cover; 14 March 2025 on the IEJ page (to check)."
@@ -1623,7 +1623,7 @@
 "words": 4767,
 "pages": 0,
 "batch": "b4",
-"read": false,
+"read": true,
 "checked": true,
 "core": "answers",
 "note": "A SASSA official on consent: \"if you don't consent, we can't assess you\".",
@@ -1647,7 +1647,7 @@
 "words": 821,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "core": "contests",
 "note": "The Mizoram government refuses the Centre's order to collect biometrics of Myanmar refugees, calling them \"our blood\" (as reported)."
@@ -1670,7 +1670,7 @@
 "words": 657,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1691,7 +1691,7 @@
 "words": 1227,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1712,7 +1712,7 @@
 "words": 457,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1733,7 +1733,7 @@
 "words": 1269,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1754,7 +1754,7 @@
 "words": 1106,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1775,7 +1775,7 @@
 "words": 3223,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": true,
 "core": "voice",
 "note": "Refugees at Zokhawthar say they are \"afraid to refuse the mandate\"."
@@ -1798,7 +1798,7 @@
 "words": 556,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false
 },
 {
@@ -1819,7 +1819,7 @@
 "words": 759,
 "pages": 0,
 "batch": "b3",
-"read": false,
+"read": true,
 "checked": false,
 "note": "Official framing of the enrolment as documentation and coordination alongside humanitarian assistance (as reported)."
 }

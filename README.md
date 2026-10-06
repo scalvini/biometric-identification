@@ -1,7 +1,7 @@
 # Biometric Identification
 
-> **Version:** 1.2
-> **Last updated:** 3 October 2026
+> **Version:** 1.3
+> **Last updated:** 6 October 2026
 
 This repository holds the corpus archive and the textual analysis for a study of biometric identification as a condition of assistance, by Dr Marco Scalvini (University of the Arts London). The study is a critical discourse analysis, in which UNHCR's identity-management guidance is read as the node, and Bangladesh as the place where that guidance is articulated most fully. Four disputes from 2023 to 2026, in Gaza, Malaysia, South Africa and Mizoram (India), are read as its recontextualisations. The textual analysis was carried out on the 21 saved core texts, at the first of the three dimensions in Norman Fairclough's framework.
 
@@ -62,7 +62,7 @@ Seventy-nine excerpts, each checked word for word against the saved copies, carr
 | `docs/textual-analysis.md` | The scope, categories, procedure and limits of the textual analysis |
 | `docs/data-and-scripts.md` | The data files, the rebuild and the checks against the archive |
 | `docs/interface-guide.md` | How to use the page and the repository, where each part of the page comes from, and how the page is published and updated |
-| `docs/archive/ARCHIVE_LOG.md` | The archive log, version 1.5, copied unchanged from the archive folder |
+| `docs/archive/ARCHIVE_LOG.md` | The archive log, version 1.6. Version 1.5 was copied unchanged from the archive folder, and version 1.6 marks every saved document as read in full |
 | `docs/archive/BDS_Corpus_Construction_Prompts.md` | The prompts of the April 2026 collection for an earlier design of the project, copied unchanged. Its Prompt A defines the doc_id and the classes used here |
 
 ## Rebuilding and checking
